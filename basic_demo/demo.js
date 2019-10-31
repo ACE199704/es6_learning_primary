@@ -257,27 +257,27 @@
 
 // //场景2:假定有一个注册页面，判断所有input 内容的长度是否都大于0
 // //es5
-// function Filed(value) {
-//   this.value = value;
-// }
-// Filed.prototype.validate = function() {
-//   return this.value.length > 0;
-// };
-// var userName = new Filed("henrry Wu");
-// var phoneNumber = new Filed("1888882828");
-// var password = new Filed("sbh");
+function Filed(value) {
+  this.value = value;
+}
+Filed.prototype.validate = function() {
+  return this.value.length > 0;
+};
+var userName = new Filed("henrry Wu");
+var phoneNumber = new Filed("1888882828");
+var password = new Filed("sbh");
 
-// console.log(userName.validate());
-// console.log(phoneNumber.validate());
-// console.log(userName);
-// console.log(phoneNumber);
+console.log(userName.validate());
+console.log(phoneNumber.validate());
+console.log(userName);
+console.log(phoneNumber);
 
-// //es6
-// var fields = [userName, phoneNumber, password];
-// var a = fields.every(field => {
-//   return field.validate();
-// });
-// console.log(a);
+//es6
+var fields = [userName, phoneNumber, password];
+var a = fields.every(field => {
+  return field.validate();
+});
+console.log(a);
 
 /**
  *
@@ -309,20 +309,20 @@
 
 // console.log(primaryColor);
 
-//判读字符串中括号是否对称？
-function balanceParens(string) {
-  return !string.split("").reduce(function(previous, char) {
-    if (previous < 0) {
-      return previous;
-    }
-    if (char == "(") {
-      return ++previous;
-    }
-    if (char == ")") {
-      return --previous;
-    }
-    return previous;
-  }, 0);
-}
+// //判读字符串中括号是否对称？
+// function balanceParens(string) {
+//   return !string.split("").reduce(function(previous, char) {
+//     if (previous < 0) {
+//       return previous;
+//     }
+//     if (char == "(") {
+//       return ++previous;
+//     }
+//     if (char == ")") {
+//       return --previous;
+//     }
+//     return previous;
+//   }, 0);
+// }
 
-console.log(balanceParens("()()()()()"));
+// console.log(balanceParens("()()()()()"));
