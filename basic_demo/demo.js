@@ -260,7 +260,7 @@
 function Filed(value) {
   this.value = value;
 }
-Filed.prototype.validate = function() {
+Filed.prototype.validate = function () {
   return this.value.length > 0;
 };
 var userName = new Filed("henrry Wu");
