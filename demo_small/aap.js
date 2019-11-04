@@ -1,26 +1,27 @@
-const data = [{
-    name: '米斯特吴',
+const data = [
+  {
+    name: "米斯特吴",
     age: 30,
-    gender: '男',
-    lookingfor: '女',
-    location: '北京',
-    image: 'https://randomuser.me/api/portraits/men/82.jpg'
+    gender: "男",
+    lookingfor: "女",
+    location: "北京",
+    image: "https://randomuser.me/api/portraits/men/82.jpg"
   },
   {
-    name: '吴先生',
+    name: "吴先生",
     age: 32,
-    gender: '男',
-    lookingfor: '女',
-    location: '上海',
-    image: 'https://randomuser.me/api/portraits/men/83.jpg'
+    gender: "男",
+    lookingfor: "女",
+    location: "上海",
+    image: "https://randomuser.me/api/portraits/men/83.jpg"
   },
   {
-    name: '李女士',
+    name: "李女士",
     age: 24,
-    gender: '女',
-    lookingfor: '男',
-    location: '北京',
-    image: 'https://randomuser.me/api/portraits/women/83.jpg'
+    gender: "女",
+    lookingfor: "男",
+    location: "北京",
+    image: "https://randomuser.me/api/portraits/women/83.jpg"
   }
 ];
 
@@ -43,20 +44,19 @@ function* profileIterator(data) {
   yield data[0];
   yield data[1];
   yield data[2];
-
 }
 const iterator = profileIterator(data);
 // console.log(iterator.next())
-const btn = document.getElementById('next');
+const btn = document.getElementById("next");
 nextProfile();
 
-btn.addEventListener('click', nextProfile);
+btn.addEventListener("click", nextProfile);
 
 function nextProfile() {
   const memberValue = iterator.next().value;
   // console.log(memberValue);
   if (memberValue != undefined) {
-    document.getElementById('profileDisplay').innerHTML = `
+    document.getElementById("profileDisplay").innerHTML = `
   <ul class = "list-group">
     <li class ="list-group-item">姓名：${memberValue.name}</li>
     <li class ="list-group-item">年龄：${memberValue.age}</li>
@@ -64,11 +64,10 @@ function nextProfile() {
     <li class ="list-group-item">寻找：${memberValue.lookingfor}</li>
   </ul>
   `;
-    document.getElementById('imageDisplay').innerHTML = `
+    document.getElementById("imageDisplay").innerHTML = `
   <img src ="${memberValue.image}"/>
   `;
   } else {
     window.location.reload();
   }
-
 }
